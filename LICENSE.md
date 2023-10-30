@@ -1,0 +1,1 @@
+Remember to fill in the template with your repository details, programming languages, specific algorithms, and any other pertinent information. Adjust the sections as necessary based on the actual content of your repository.
