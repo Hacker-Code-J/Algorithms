@@ -11,10 +11,9 @@ int main() {
     }
     printf("\n");
 
-    // Using partition on the entire array
-    int pivotIndex = partition(A, 0, n - 1);
+    quicksort_visual(A, 0, n - 1);  // Using QuickSort on the entire array
 
-    printf("After partitioning around A[%d] = %d:\n", pivotIndex, A[pivotIndex]);
+    printf("Sorted array: ");
     for (int i = 0; i < n; i++) {
         printf("%d ", A[i]);
     }

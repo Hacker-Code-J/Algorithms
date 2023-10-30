@@ -2,6 +2,17 @@
 #define ALGORITHMS_H
 
 /**
+ * Prints the array A with visual markers. The subarray A[p..r] is enclosed in brackets,
+ * and the pivot element is marked with "(pivot)".
+ *
+ * @param A The array to be printed.
+ * @param p The starting index of the subarray.
+ * @param r The ending index of the subarray.
+ * @param pivot_index The index of the pivot element.
+ */
+void print_array_visual(int A[], int p, int r, int pivot_index);
+
+/**
  * Swaps the values of two integers.
  *
  * @param a Pointer to the first integer.
@@ -20,5 +31,16 @@ void swap(int* a, int* b);
  * @return The final position of the pivot.
  */
 int partition(int A[], int p, int r);
+
+/**
+ * Sorts the array A using the QuickSort algorithm.
+ *
+ * @param A The array to be sorted.
+ * @param p The starting index.
+ * @param r The ending index.
+ */
+void quicksort(int A[], int p, int r);
+void quicksort_visual(int A[], int p, int r);
+
 
 #endif // PARTITION_H
