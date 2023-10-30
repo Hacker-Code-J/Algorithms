@@ -35,7 +35,7 @@ Brief introduction about the repository, purpose, and its significance.
 ```bash
 git clone https://github.com/yourusername/algorithm-repository.git
 cd algorithm-repository
-...
+```
 
 ## Usage
 
@@ -43,4 +43,8 @@ Briefly explain how someone can use the algorithms or run the provided code.
 
 ```bash
 python3 some_algorithm.py
-...
+```
+
+##  License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
