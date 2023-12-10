@@ -5,12 +5,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <math.h>
 
 void rotation_measure() {
     int* arr;
         int initialSize = 10; // Starting size of the array
         int growthFactor = 5; // How much the array size increases each time
-        int maxSize = 10000; // Maximum size of the array
+        int maxSize = (int)pow(10, 6); // Maximum size of the array
         int newSize;
 
         // Initialize random number generator
@@ -38,10 +39,10 @@ void rotation_measure() {
                 initialSize = newSize;
             }
             // Insert random number into array
-            arr[i] = rand() % 100000; // Random number between 0 and 99
+            arr[i] = rand() % (int)pow(10, 6); // Random number between 0 and 99
             // printf("arr[%d] = %d\n", i, arr[i]);
     }
-    for (int i = 0; i < 10000; i++) {
+    for (int i = 1; i < 1000; i++) {
         int d = i;
         // clock_t start, end;
         // double cpu_time_used;
@@ -70,7 +71,7 @@ void rotation_measure() {
         elapsed_time = (end.tv_sec - start.tv_sec) * 1e9;
         elapsed_time = (elapsed_time + (end.tv_nsec - start.tv_nsec)) * 1e-9;
         // printf("Juggling Rotation took %f seconds\n", cpu_time_used);
-        printf("%.3f\n", elapsed_time*1000000);
+        printf("%.3f\n", elapsed_time * pow(10,6));
         free(jugglingArr); // Free the copy after use
 
         // Block Swap Rotation Test
@@ -81,7 +82,7 @@ void rotation_measure() {
         clock_gettime(CLOCK_MONOTONIC, &end);
         elapsed_time = (end.tv_sec - start.tv_sec) * 1e9;
         elapsed_time = (elapsed_time + (end.tv_nsec - start.tv_nsec)) * 1e-9;
-        printf("%.3f\n", elapsed_time*1000000);
+        printf("%.3f\n", elapsed_time * pow(10,6));
         // end = clock();
         // cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
         // printf("Block Swap Rotation took %f seconds\n", cpu_time_used);
@@ -95,7 +96,7 @@ void rotation_measure() {
         clock_gettime(CLOCK_MONOTONIC, &end);
         elapsed_time = (end.tv_sec - start.tv_sec) * 1e9;
         elapsed_time = (elapsed_time + (end.tv_nsec - start.tv_nsec)) * 1e-9;
-        printf("%.3f\n", elapsed_time*1000000);
+        printf("%.3f\n", elapsed_time * pow(10,6));
         // end = clock();
         // cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
         // printf("Reversal Rotation took %f seconds\n", cpu_time_used);

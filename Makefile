@@ -20,6 +20,7 @@ main.o: main.c
 
 clean:
 	rm -f *.o *.txt a.out
+	(cd Views && rm -f *.txt)
 
 leak:
 	valgrind --leak-check=full --show-leak-kinds=all ./a.out
