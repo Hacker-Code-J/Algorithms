@@ -55,3 +55,80 @@ void quicksort_visual(int A[], int p, int r) {
         quicksort(A, q + 1, r);
     }
 }
+
+void MaxHeapify(int arr[], int n, int i) {
+    int largest = i;
+    int l = 2 * i + 1;
+    int r = 2 * i + 2;
+
+    if (l < n && arr[l] > arr[largest])
+        largest = l;
+
+    if (r < n && arr[r] > arr[largest])
+        largest = r;
+
+    if (largest != i) {
+        swap(&arr[i], &arr[largest]);
+        printHeap(arr, n); // Print the heap after each swap
+        MaxHeapify(arr, n, largest);
+    }
+}
+
+void BuildMaxHeap(int arr[], int n) {
+    for (int i = n / 2 - 1; i >= 0; i--) {
+        MaxHeapify(arr, n, i);
+        printHeap(arr, n);
+    }
+}
+
+void printHeap(int arr[], int n) {
+    printf("[");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("]\n");
+}
+
+void Merge(int A[], int p, int q, int r) {
+    int n1 = q - p + 1;
+    int n2 = r - q;
+
+    // Create L[] and R[] as temporary arrays
+    int L[n1 + 1], R[n2 + 1];
+
+    // Copy data to temporary arrays L[] and R[]
+    for (int i = 0; i < n1; i++)
+        L[i] = A[p + i];
+    for (int j = 0; j < n2; j++)
+        R[j] = A[q + 1 + j];
+
+    // Sentinel values
+    int INT_MAX = 10000;
+    L[n1] = INT_MAX;
+    R[n2] = INT_MAX;
+
+    int i = 0; // Initial index of first subarray
+    int j = 0; // Initial index of second subarray
+
+    // Initial index of merged subarray
+    for (int k = p; k <= r; k++) {
+        if (L[i] <= R[j]) {
+            A[k] = L[i];
+            i++;
+        } else {
+            A[k] = R[j];
+            j++;
+        }
+    }
+}
+// Print the current state of the array after the merge
+// printf("After merging from index %d to %d: ", p, r);
+// printArray(A + p, r - p + 1);
+
+
+// Utility function to print an array
+void printArray(int A[], int size) {
+    for (int i = 0; i < size; i++)
+        printf("%d ", A[i]);
+    printf("\n");
+}

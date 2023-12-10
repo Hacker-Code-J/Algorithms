@@ -42,5 +42,11 @@ int partition(int A[], int p, int r);
 void quicksort(int A[], int p, int r);
 void quicksort_visual(int A[], int p, int r);
 
+void MaxHeapify(int arr[], int n, int i);
+void BuildMaxHeap(int arr[], int n);
+void printHeap(int arr[], int n);
+
+void Merge(int A[], int p, int q, int r);
+void printArray(int A[], int size);
 
 #endif // PARTITION_H
