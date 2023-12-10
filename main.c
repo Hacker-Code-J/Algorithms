@@ -1,5 +1,32 @@
 #include <stdio.h>
+
+#include "rotation.h"
 #include "algorithms.h"
+#include "measure.h"
+
+// Utility function to print an array
+void printArray(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+void rotation_Test() {
+    int arr[] = {1, 2, 3, 4, 5, 6, 7};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int d = 3;
+
+    printf("Original array: \n");
+    printArray(arr, n);
+
+    // jugglingRotation(arr, n, d);
+    // blockSwapRotate(arr, n, d);
+    ReverseRotate(arr,n,d);
+
+    printf("Rotated array: \n");
+    printArray(arr, n);
+}
 
 void MaxHeapify_TEST() {
     int arr[] = {3, 2, 15, 5, 4, 45, 6, 7, 51, 8};
@@ -28,7 +55,6 @@ void BuildMaxHeap_TEST() {
     printf("Max-Heap: \n");
     printHeap(arr, n);
 }
-
 // Driver code to test the Merge function
 void Merge_TEST() {
     int A[] = {12, 11, 13, 5, 6, 7};
@@ -48,12 +74,16 @@ void Merge_TEST() {
     printArray(A, arraySize);
 }
 
+
+
 int main() {
+    rotation_measure();
+    // rotation_Test();
     // MaxHeapify_TEST();
     // printf("\n");
     // BuildMaxHeap_TEST();
 
-    Merge_TEST();
+    // Merge_TEST();
 
 
     // // int A[] = {9, 7, 5, 11, 12, 2, 14, 3, 10, 6};

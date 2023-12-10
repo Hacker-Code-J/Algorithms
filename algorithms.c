@@ -124,11 +124,3 @@ void Merge(int A[], int p, int q, int r) {
 // Print the current state of the array after the merge
 // printf("After merging from index %d to %d: ", p, r);
 // printArray(A + p, r - p + 1);
-
-
-// Utility function to print an array
-void printArray(int A[], int size) {
-    for (int i = 0; i < size; i++)
-        printf("%d ", A[i]);
-    printf("\n");
-}

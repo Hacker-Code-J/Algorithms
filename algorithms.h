@@ -1,5 +1,5 @@
-#ifndef ALGORITHMS_H
-#define ALGORITHMS_H
+#ifndef _ALGORITHMS_H
+#define _ALGORITHMS_H
 
 /**
  * Prints the array A with visual markers. The subarray A[p..r] is enclosed in brackets,
@@ -47,6 +47,5 @@ void BuildMaxHeap(int arr[], int n);
 void printHeap(int arr[], int n);
 
 void Merge(int A[], int p, int q, int r);
-void printArray(int A[], int size);
 
-#endif // PARTITION_H
+#endif // _ALGORITHMS_H
